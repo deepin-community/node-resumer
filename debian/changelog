@@ -1,0 +1,51 @@
+node-resumer (0.0.0-5) unstable; urgency=medium
+
+  * Team upload
+  * Bump debhelper from old 12 to 13
+    + Drop check for DEB_BUILD_OPTIONS containing "nocheck", since debhelper
+      now does this
+  * Declare compliance with policy 4.6.0
+  * Add "Rules-Requires-Root: no"
+  * Change section to javascript
+  * Fix filenamemangle
+  * Fix GitHub tags regex
+  * Use dh-sequence-nodejs auto test & install
+
+ -- Yadd <yadd@debian.org>  Tue, 02 Nov 2021 16:52:46 +0100
+
+node-resumer (0.0.0-4) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Use secure copyright file specification URI.
+  * Bump debhelper from old 10 to 12.
+  * Set debhelper-compat version in Build-Depends.
+  * Update Vcs-* headers from URL redirect.
+  * Use canonical URL in Vcs-Git.
+  * Remove obsolete field Name from debian/upstream/metadata (already
+    present in machine-readable debian/copyright).
+
+ -- Jelmer Vernooĳ <jelmer@debian.org>  Sat, 28 Aug 2021 23:56:16 +0100
+
+node-resumer (0.0.0-3) unstable; urgency=medium
+
+  * Team upload.
+  * Bump to compat 10.
+  * Run testsuite.
+  * Fix testsuite by using recent node-concat.
+
+ -- Bastien Roucariès <rouca@debian.org>  Sun, 09 Apr 2017 15:40:54 +0200
+
+node-resumer (0.0.0-2) unstable; urgency=medium
+
+  * Team upload.
+  * Bug fix: "node-resumer depends on node-through2 (>= 2.3.4), but
+    only 2.0.3-1 is in unstable", thanks to Adrian Bunk (Closes: #847715).
+  * Fix breakage by depending on through instead of through2.
+
+ -- Bastien Roucariès <rouca@debian.org>  Tue, 04 Apr 2017 00:12:33 +0200
+
+node-resumer (0.0.0-1) unstable; urgency=low
+
+  * Initial release (Closes: #814286)
+
+ -- Ross Gammon <rosco2@ubuntu.com>  Fri, 18 Nov 2016 20:13:43 +0100

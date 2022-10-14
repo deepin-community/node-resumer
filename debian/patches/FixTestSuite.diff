@@ -1,0 +1,56 @@
+Subject: Fix test suite
+From: Tom Hughes
+
+Fix test suite by using more recent node-concat-stream
+
+Origin: https://github.com/substack/resumer/pull/2
+Forwarded: https://github.com/substack/resumer/issues/4
+
+Index: node-resumer/package.json
+===================================================================
+--- node-resumer.orig/package.json
++++ node-resumer/package.json
+@@ -9,7 +9,7 @@
+     "devDependencies": {
+         "tap": "~0.4.0",
+         "tape": "~1.0.2",
+-        "concat-stream": "~0.1.1"
++        "concat-stream": "~1.4.4"
+     },
+     "scripts": {
+         "test": "tap test/*.js"
+Index: node-resumer/test/resume.js
+===================================================================
+--- node-resumer.orig/test/resume.js
++++ node-resumer/test/resume.js
+@@ -6,7 +6,7 @@ test('implicit resume', function (t) {
+     t.plan(1);
+     
+     var s = createStream();
+-    s.pipe(concat(function (err, body) {
++    s.pipe(concat(function (body) {
+         t.equal(body, 'beep boop\n');
+     }));
+ });
+@@ -23,7 +23,7 @@ test('pause/resume', function (t) {
+         s.resume();
+     }, 100);
+     
+-    s.pipe(concat(function (err, body) {
++    s.pipe(concat(function (body) {
+         t.equal(paused, false);
+         t.equal(body, 'beep boop\n');
+     }));
+Index: node-resumer/test/through.js
+===================================================================
+--- node-resumer.orig/test/through.js
++++ node-resumer/test/through.js
+@@ -11,7 +11,7 @@ test('through write/end', function (t) {
+         t.ok(true);
+     });
+     
+-    s.pipe(concat(function (err, body) {
++    s.pipe(concat(function (body) {
+         t.equal(body, 'BEGIN\nRAWR\nEND\n');
+     }));
+     
