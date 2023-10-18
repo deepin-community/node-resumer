@@ -1,3 +1,13 @@
+node-resumer (0.0.0-6) unstable; urgency=medium
+
+  [ Yadd ]
+  * Drop nodejs dependency
+
+  [ Debian Janitor ]
+  * Apply multi-arch hints. + node-resumer: Add Multi-Arch: foreign.
+
+ -- Jelmer Vernooĳ <jelmer@debian.org>  Sun, 04 Dec 2022 13:01:01 +0000
+
 node-resumer (0.0.0-5) unstable; urgency=medium
 
   * Team upload
